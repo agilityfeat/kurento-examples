@@ -1,0 +1,21 @@
+{
+  "name": "kurento-load-testing",
+  "version": "6.6.1-dev",
+  "private": true,
+  "scripts": {
+    "server": "./node_modules/.bin/nodemon --watch server/ --exec ./node_modules/.bin/babel-node main.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "express": "~4.12.4",
+    "kurento-client": "^6.6.0",
+    "lodash": "^4.17.4",
+    "nodemon": "^1.11.0",
+    "pug": "^2.0.0-rc.2",
+    "uuid": "^3.1.0",
+    "webpack": "^3.4.1",
+    "ws": "~1.0.1"
+  }
+}

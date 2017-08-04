@@ -1,0 +1,36 @@
+html, body {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#my-video {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	width: 300px;
+	background-color: #DEDEDE;
+}
+
+#other-video {
+	width: 100%;
+	height: 100%;
+	background-color: #A0A0A0;
+}
+
+#header {
+	z-index: 10000;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-family: arial, sans-serif;
+}
+
+h1, h2 {
+	margin: 5px;
+}
