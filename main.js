@@ -21,7 +21,8 @@ for(var name in AVAILABLE_HANDLERS) {
   app.get(`/${name}/:id/:param?`, httpHandler(name));
 }
 
-const server = http.createServer(app).listen(3000, function() {
+const server = http.createServer(app).listen(3000, function(err) {
+    err && console.log(err)
     console.log('Kurento App. started');
 });
 

@@ -41,10 +41,12 @@ export default class OneToOneHandler extends BaseHandler {
     try {
       let recA = await this.pipeline.create('RecorderEndpoint', {
         uri: `file:///tmp/rec-${clientA.id}.webm`,
-        stopOnEndOfStream: true
+        stopOnEndOfStream: true,
+        mediaProfile: 'WEBM'
       })
       let recB = await this.pipeline.create('RecorderEndpoint', {
-        uri: `file:///tmp/rec-${clientB.id}.webm`
+        uri: `file:///tmp/rec-${clientB.id}.webm`,
+        mediaProfile: 'WEBM'
       })
 
       let rtcA = clientA.endpoint;
