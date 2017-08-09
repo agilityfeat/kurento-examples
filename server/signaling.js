@@ -4,11 +4,11 @@ import Kurento      from 'kurento-client';
 import uuidv4       from 'uuid/v4';
 
 import OneToOneHandler from './one_to_one_handler';
+import FourWayHandler from './four_way_handler';
 
-function FourWayHandler () {}
 function ConferenceHandler () {}
 
-const kurentoUrl = 'ws://proto.webrtc.ventures:8113/kurento';
+const kurentoUrl = process.env.KURENTO_URL;
 let kurentoClient = null;
 
 getKurentoClient();

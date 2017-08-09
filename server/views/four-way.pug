@@ -1,0 +1,11 @@
+extends layout
+
+block scripts
+  script(src='/js/four-way.js')
+
+block content
+  #header
+    h1 One to One
+    h2 [Room: #{id}]
+  video#other-video(autoplay)
+  video#my-video(autoplay)

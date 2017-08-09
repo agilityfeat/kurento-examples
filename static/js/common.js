@@ -1,7 +1,7 @@
 function connectSocket() {
   var a = document.createElement('a');
   a.href = window.location;
-  var url = `ws://` + a.host + '/ws' + a.pathname;
+  var url = `ws://${a.host}/ws${a.pathname}`;
   return new WebSocket(url);
 }
 
@@ -44,14 +44,14 @@ window.onbeforeunload = function() {
 }
 
 ws.onmessage = function(evt) {
-	var message = JSON.parse(evt.data);
-	console.info('RECV: ' + evt.data);
+  var message = JSON.parse(evt.data);
+  console.info('RECV: ' + evt.data);
 
-	if(message.action === 'iceCandidate') {
-		webRtcPeer.addIceCandidate(message.candidate);
+  if(message.action === 'iceCandidate') {
+    webRtcPeer.addIceCandidate(message.candidate);
   } else if(message.action === 'answer') {
-  	webRtcPeer.processAnswer(message.answer);
+    webRtcPeer.processAnswer(message.answer);
   } else {
-		handleError('Unrecognized message: ' + message.data);
-	}
+    handleError('Unrecognized message: ' + message.data);
+  }
 }
