@@ -1,0 +1,1 @@
+# kurento-recording-test
