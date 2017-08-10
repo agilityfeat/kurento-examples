@@ -53,6 +53,7 @@ export default class BaseHandler extends EventEmitter {
     webRtc.on('MediaFlowOutStateChange', evt => console.log(`Media.Out: ${evt.state}`));
 
     _.map(this.candidates[id], candidate => webRtc.addIceCandidate(candidate));
+    return client;
   }
 
   _processOffer(client, offer) {

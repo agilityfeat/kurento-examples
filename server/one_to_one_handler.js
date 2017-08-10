@@ -26,8 +26,7 @@ export default class OneToOneHandler extends BaseHandler {
   removeClient(id) {
     let client = _.find(this.clients, {id});
     if(client) {
-      this._removeClient(client);
-      if(client.recorder) {
+      this._removeClient(client); if(client.recorder) {
         client.recorder.stopAndWait().then(() => {
           // fs.unlink(url.parse(client.recorder.getUri()).path, _.noop);
         });
@@ -47,6 +46,7 @@ export default class OneToOneHandler extends BaseHandler {
 
       let recB = await this.pipeline.create('RecorderEndpoint', {
         uri: `file:///tmp/rec-${clientB.id}.webm`,
+        stopOnEndOfStream: true,
         mediaProfile: 'WEBM'
       });
 

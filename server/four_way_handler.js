@@ -7,7 +7,6 @@ export default class FourWayHandler extends BaseHandler {
   constructor(kurentoClient, id) {
     super(kurentoClient, id);
     this.composite = null;
-    this.hubPorts = [];
   }
 
   async getComposite() {
@@ -60,20 +59,12 @@ export default class FourWayHandler extends BaseHandler {
 
   async connect(id) {
     try {
-      console.log(`id: ${id}`);
       let client = _.find(this.clients, {id});
       console.log(`client ${client.id} connected to hub.`);
+
       client.hubPort = await this.createHubPort();
       client.endpoint.connect(client.hubPort);
       client.hubPort.connect(client.endpoint);
-      // for(let client of this.clients) {
-      //   for(let peer of this.clients){
-      //     if(client.id !== peer.id) {
-      //       await client.endpoint.connect(peer.endpoint);
-      //       console.log(`${client.id} Connected to: ${peer.id}`)
-      //     }
-      //   };
-      // }
     } catch(error) {
       console.error(`Error connecting media workflow`, error);
     }
