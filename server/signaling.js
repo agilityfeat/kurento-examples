@@ -5,8 +5,7 @@ import uuidv4       from 'uuid/v4';
 
 import OneToOneHandler from './one_to_one_handler';
 import FourWayHandler from './four_way_handler';
-
-function ConferenceHandler () {}
+import ConferenceHandler from './conference_handler';
 
 const kurentoUrl = process.env.KURENTO_URL;
 let kurentoClient = null;
