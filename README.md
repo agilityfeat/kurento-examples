@@ -1,4 +1,4 @@
 # kurento-recording-test
 
 For more information on how to setup, 
-check this [tutorial](https://webrtc.ventures/2017/08/webrtc-recording-solutions-made-simple/)
+check this out blogpost: https://webrtc.ventures/2017/08/kurento-recording-solutions-made-simple/
